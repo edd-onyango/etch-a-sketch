@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
-/* .squareContainer {
+.squareContainer {
     display: flex;
-} */
+    flex-direction: column;
+    gap: 5px;
+}
