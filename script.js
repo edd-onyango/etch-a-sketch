@@ -41,13 +41,20 @@ function drawGrid (sizeOfGrid) {
     for (const pinkSquare of pinkSquares) {
         pinkSquare.addEventListener('mouseover', () =>{
             pinkSquare.style.backgroundColor = randomRgbColor();
+            darkenSquare(pinkSquare);
         });
-    
-        // pinkSquare.addEventListener('mouseout', () =>{
-        //     pinkSquare.style.backgroundColor = 'salmon';
-        // });
     }
 }
+
+const darkenSquare = (square) => {
+    let currentBrightness = square.dataset.brightness || 100;
+    currentBrightness = parseInt(currentBrightness) - 10;
+
+    if (currentBrightness >= 0) {
+        square.style.filter = `brightness(${currentBrightness}%)`;
+        square.dataset.brightness = currentBrightness;
+    }
+};
 
 
 
