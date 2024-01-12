@@ -1,24 +1,29 @@
 let grid = document.getElementById('gridContainer');
-let counter = 0;
+// let counter = 0;
 
 let gridButton = document.getElementById('gridButton');
 gridButton.addEventListener('click', () => {
+
     let gridSize = prompt('Please enter the desired grid size');
+    while(grid.hasChildNodes()){
+        grid.removeChild(grid.firstChild);
+    }
     drawGrid(gridSize);
 }); 
 
 function drawGrid (sizeOfGrid) {
-    for(counter = 1; counter <= sizeOfGrid;  counter++){
+    for(let counterRow = 1; counterRow <= sizeOfGrid;  counterRow++){
         const row = document.createElement('div')
         row.setAttribute('style', 'display: flex; justify-content: center; gap: 5px;');
-        for(let counterRow = 1; counterRow <= sizeOfGrid; counterRow++){
+        row.setAttribute('class', 'sq-row');
+        for(let counterSquare = 1; counterSquare <= sizeOfGrid; counterSquare++){
             const square = document.createElement('div');
             square.setAttribute(
                 'style',
                 'background-color: salmon; color: white; width: 90px; height: 90px;',
             );
             square.setAttribute('class', 'pink-sq');
-            square.textContent = `${counterRow}`;
+            square.textContent = `${counterSquare}`;
             row.appendChild(square);
         }
         grid.appendChild(row);

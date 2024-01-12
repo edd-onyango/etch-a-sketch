@@ -10,3 +10,14 @@
     align-items: center;
     gap: 5px;
 }
+
+.square {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+#gridButton {
+    width: 250px;
+    height: 45px;
+}
