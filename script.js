@@ -1,5 +1,12 @@
 let grid = document.getElementById('gridContainer');
-// let counter = 0;
+
+const randomRgbColor = () => {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b})`;
+};
 
 let gridButton = document.getElementById('gridButton');
 gridButton.addEventListener('click', () => {
@@ -33,7 +40,7 @@ function drawGrid (sizeOfGrid) {
     
     for (const pinkSquare of pinkSquares) {
         pinkSquare.addEventListener('mouseover', () =>{
-            pinkSquare.style.backgroundColor = 'blue';
+            pinkSquare.style.backgroundColor = randomRgbColor();
         });
     
         // pinkSquare.addEventListener('mouseout', () =>{
