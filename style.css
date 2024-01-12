@@ -20,4 +20,16 @@
 #gridButton {
     width: 250px;
     height: 45px;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 15px;
+    padding: 20px 30px;
+    background-color: salmon;
+    border-radius: 8px;
+}
+
+#gridButton:hover {
+    background-color: blue;;
 }
